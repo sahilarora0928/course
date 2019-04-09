@@ -43,6 +43,6 @@ public abstract class BaseEntity {
     }
 
     public void setUpdationTimeStamp(Calendar updationTimeStamp) {
-        this.updationTimeStamp = updationTimeStamp;
+        this.updationTimeStamp = updationTimeStamp ;
     }
 }
