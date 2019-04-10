@@ -1,10 +1,15 @@
 package com.video.course.core;
 
+import java.util.Calendar;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
-import javax.persistence.*;
-import java.util.Calendar;
 
 @MappedSuperclass
 public abstract class BaseEntity {

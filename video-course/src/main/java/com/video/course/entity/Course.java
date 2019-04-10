@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.video.course.core.BaseEntity;
 import com.video.course.enums.CourseTypeEnum;
 
@@ -14,9 +15,13 @@ import com.video.course.enums.CourseTypeEnum;
 @Table(name = "course")
 public class Course extends BaseEntity {
 
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user")
 	private User user;
+
+	@Column(name = "course_name")
+	private String name;
 
 	@Column(name = "description")
 	private String description;
@@ -29,6 +34,14 @@ public class Course extends BaseEntity {
 
 	@Column(name = "video_location")
 	private String videoLocation;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public User getUser() {
 		return user;
